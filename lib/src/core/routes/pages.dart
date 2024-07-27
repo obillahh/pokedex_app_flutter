@@ -1,7 +1,7 @@
 library route_pages;
 
 import 'package:go_router/go_router.dart';
-import 'package:pokedex_application/src/features/pokedex/presentation/pages/pages.dart';
+import 'package:pokedex_application/src/features/pokedex/presentation/pages/pokedex_page.dart';
 import 'routes.dart';
 
 final appRouter = GoRouter(

@@ -1,19 +1,23 @@
 import 'package:dio/dio.dart';
+import 'package:pokedex_application/src/core/api/api_endpoints.dart';
 import 'package:pokedex_application/src/core/api/api_exceptions.dart';
 
 class ApiClient {
   final Dio dio;
 
-  ApiClient({required String baseUrl})
+  ApiClient({String baseUrl = ApiEndpoints.baseUrl})
       : dio = Dio(BaseOptions(
           baseUrl: baseUrl,
           connectTimeout: const Duration(seconds: 5),
           receiveTimeout: const Duration(seconds: 3),
         ));
 
-  Future<Response> get(String endpoint) async {
+  Future<Response> get(String endpoint, {Map<String, dynamic>? params}) async {
     try {
-      return await dio.get(endpoint);
+      return await dio.get(
+        endpoint,
+        queryParameters: params,
+      );
     } on DioException catch (e) {
       throw ApiException.fromDioError(e);
     }
