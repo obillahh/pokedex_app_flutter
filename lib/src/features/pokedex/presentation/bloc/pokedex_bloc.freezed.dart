@@ -18,19 +18,19 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$PokedexEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetchPokedex,
+    required TResult Function(String sortBy) fetchPokedex,
     required TResult Function(String next) fetchPokedexNextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fetchPokedex,
+    TResult? Function(String sortBy)? fetchPokedex,
     TResult? Function(String next)? fetchPokedexNextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetchPokedex,
+    TResult Function(String sortBy)? fetchPokedex,
     TResult Function(String next)? fetchPokedexNextPage,
     required TResult orElse(),
   }) =>
@@ -80,6 +80,8 @@ abstract class _$$GetPokedexEventImplCopyWith<$Res> {
   factory _$$GetPokedexEventImplCopyWith(_$GetPokedexEventImpl value,
           $Res Function(_$GetPokedexEventImpl) then) =
       __$$GetPokedexEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String sortBy});
 }
 
 /// @nodoc
@@ -89,54 +91,79 @@ class __$$GetPokedexEventImplCopyWithImpl<$Res>
   __$$GetPokedexEventImplCopyWithImpl(
       _$GetPokedexEventImpl _value, $Res Function(_$GetPokedexEventImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? sortBy = null,
+  }) {
+    return _then(_$GetPokedexEventImpl(
+      null == sortBy
+          ? _value.sortBy
+          : sortBy // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$GetPokedexEventImpl implements _GetPokedexEvent {
-  const _$GetPokedexEventImpl();
+  const _$GetPokedexEventImpl(this.sortBy);
+
+  @override
+  final String sortBy;
 
   @override
   String toString() {
-    return 'PokedexEvent.fetchPokedex()';
+    return 'PokedexEvent.fetchPokedex(sortBy: $sortBy)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetPokedexEventImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$GetPokedexEventImpl &&
+            (identical(other.sortBy, sortBy) || other.sortBy == sortBy));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, sortBy);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetPokedexEventImplCopyWith<_$GetPokedexEventImpl> get copyWith =>
+      __$$GetPokedexEventImplCopyWithImpl<_$GetPokedexEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetchPokedex,
+    required TResult Function(String sortBy) fetchPokedex,
     required TResult Function(String next) fetchPokedexNextPage,
   }) {
-    return fetchPokedex();
+    return fetchPokedex(sortBy);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fetchPokedex,
+    TResult? Function(String sortBy)? fetchPokedex,
     TResult? Function(String next)? fetchPokedexNextPage,
   }) {
-    return fetchPokedex?.call();
+    return fetchPokedex?.call(sortBy);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetchPokedex,
+    TResult Function(String sortBy)? fetchPokedex,
     TResult Function(String next)? fetchPokedexNextPage,
     required TResult orElse(),
   }) {
     if (fetchPokedex != null) {
-      return fetchPokedex();
+      return fetchPokedex(sortBy);
     }
     return orElse();
   }
@@ -175,7 +202,12 @@ class _$GetPokedexEventImpl implements _GetPokedexEvent {
 }
 
 abstract class _GetPokedexEvent implements PokedexEvent {
-  const factory _GetPokedexEvent() = _$GetPokedexEventImpl;
+  const factory _GetPokedexEvent(final String sortBy) = _$GetPokedexEventImpl;
+
+  String get sortBy;
+  @JsonKey(ignore: true)
+  _$$GetPokedexEventImplCopyWith<_$GetPokedexEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -245,7 +277,7 @@ class _$GetPokedexNextPageEventImpl implements _GetPokedexNextPageEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetchPokedex,
+    required TResult Function(String sortBy) fetchPokedex,
     required TResult Function(String next) fetchPokedexNextPage,
   }) {
     return fetchPokedexNextPage(next);
@@ -254,7 +286,7 @@ class _$GetPokedexNextPageEventImpl implements _GetPokedexNextPageEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fetchPokedex,
+    TResult? Function(String sortBy)? fetchPokedex,
     TResult? Function(String next)? fetchPokedexNextPage,
   }) {
     return fetchPokedexNextPage?.call(next);
@@ -263,7 +295,7 @@ class _$GetPokedexNextPageEventImpl implements _GetPokedexNextPageEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetchPokedex,
+    TResult Function(String sortBy)? fetchPokedex,
     TResult Function(String next)? fetchPokedexNextPage,
     required TResult orElse(),
   }) {

@@ -33,3 +33,9 @@ class PokemonDataModel with _$PokemonDataModel {
 
   factory PokemonDataModel.fromJson(Map<String, dynamic> json) => _$PokemonDataModelFromJson(json);
 }
+
+extension PokemonDataModelX on PokemonDataModel {
+  int get id {
+    return int.parse(url!.split('/')[6]);
+  }
+}

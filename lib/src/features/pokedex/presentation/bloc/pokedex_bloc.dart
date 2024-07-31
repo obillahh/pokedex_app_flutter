@@ -23,10 +23,10 @@ class PokedexBloc extends Bloc<PokedexEvent, PokedexState> {
   Future<void> _onGetPokedexEvent(_GetPokedexEvent event, Emitter<PokedexState> emit) async {
     emit(const PokedexState.loading());
     try {
-      final pokedex = await getPokedexUseCase.execute();
+      final pokedex = await getPokedexUseCase.execute(event.sortBy);
       emit(PokedexState.success(pokedex: pokedex));
     } catch (e) {
-      emit(const PokedexState.failure(message: 'Failed to fetch pokedex'));
+      emit(PokedexState.failure(message: e.toString()));
     }
   }
 
@@ -36,7 +36,7 @@ class PokedexBloc extends Bloc<PokedexEvent, PokedexState> {
       final pokedex = await getPokedexNextPageUseCase.execute(event.next);
       emit(PokedexState.success(pokedex: pokedex));
     } catch (e) {
-      emit(const PokedexState.failure(message: 'Failed to fetch next page'));
+      emit(PokedexState.failure(message: e.toString()));
     }
   }
 }

@@ -7,7 +7,7 @@ class GetPokedexUseCase {
 
   final PokedexRepository repository;
 
-  Future<PokedexResponseEntity?> execute() async {
-    return repository.getPokedex();
+  Future<PokedexResponseEntity?> execute(String sortBy) async {
+    return repository.getPokedex(sortBy);
   }
 }

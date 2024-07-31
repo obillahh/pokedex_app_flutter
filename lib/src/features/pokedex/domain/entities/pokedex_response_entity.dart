@@ -33,3 +33,9 @@ class PokemonDataEntity with _$PokemonDataEntity {
   factory PokemonDataEntity.fromJson(Map<String, dynamic> json) =>
       _$PokemonDataEntityFromJson(json);
 }
+
+extension PokemonDataEntityX on PokemonDataEntity {
+  int get id {
+    return int.parse(url.split('/')[6]);
+  }
+}

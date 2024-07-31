@@ -9,6 +9,7 @@ import 'package:pokedex_application/src/core/constants/constants.dart';
 import 'package:pokedex_application/src/core/constants/text_style.dart';
 import 'package:pokedex_application/src/features/pokedex/domain/entities/pokedex_response_entity.dart';
 import 'package:pokedex_application/src/features/pokedex/presentation/bloc/pokedex_bloc.dart';
+import 'package:pokedex_application/src/features/pokedex/presentation/widgets/pokedex_search_bar_widget.dart';
 import 'package:pokedex_application/src/features/pokedex/presentation/widgets/pokemon_card_widget.dart';
 
 class PokedexPage extends StatefulWidget {
@@ -22,6 +23,8 @@ class _PokedexPageState extends State<PokedexPage> {
   final PagingController<String, PokemonDataEntity> _pagingController =
       PagingController(firstPageKey: ApiEndpoints.pokemonListEndpoint);
 
+  String _selectedSortOption = 'Number';
+
   @override
   void dispose() {
     _pagingController.dispose();
@@ -34,7 +37,7 @@ class _PokedexPageState extends State<PokedexPage> {
     _pagingController.addPageRequestListener((pageKey) {
       context.read<PokedexBloc>().add(PokedexEvent.fetchPokedexNextPage(pageKey));
     });
-    context.read<PokedexBloc>().add(const PokedexEvent.fetchPokedex());
+    context.read<PokedexBloc>().add(PokedexEvent.fetchPokedex(_selectedSortOption));
   }
 
   AppBar _buildAppBar() {
@@ -61,47 +64,95 @@ class _PokedexPageState extends State<PokedexPage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Expanded(
-                child: TextField(
-                  style: AppTextStyle.body3.copyWith(
-                    color: AppColor.dark,
-                  ),
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(24.0).r,
-                    ),
-                    hintText: 'Search',
-                    hintStyle: AppTextStyle.body3.copyWith(
-                      color: AppColor.medium,
-                    ),
-                    prefixIcon: Icon(
-                      Icons.search,
-                      color: AppColor.primary,
-                      size: 20.0.sp,
-                    ),
-                    filled: true,
-                    fillColor: AppColor.white,
-                    isDense: true,
-                  ),
-                ),
+              const Expanded(
+                child: PokedexSearchBar(),
               ),
               SizedBox(width: 16.0.h),
-              IconButton(
-                onPressed: () {},
-                style: IconButton.styleFrom(
-                  backgroundColor: AppColor.white,
-                  minimumSize: Size(42.0.w, 42.0.w),
-                ),
-                icon: Icon(
-                  Icons.tag,
-                  color: AppColor.primary,
-                  size: 18.0.sp,
-                ),
-              ),
+              _buildSortCard(),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  IconButton _buildSortCard() {
+    return IconButton(
+      onPressed: () {
+        showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.0).r,
+              ),
+              backgroundColor: AppColor.primary,
+              title: Text(
+                'Sort By:',
+                style: AppTextStyle.subtitle2.copyWith(color: AppColor.white),
+              ),
+              contentPadding: EdgeInsets.all(4.0.h),
+              content: Container(
+                decoration: BoxDecoration(
+                  color: AppColor.white,
+                  borderRadius: BorderRadius.circular(8.0).r,
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    RadioListTile<String>(
+                      fillColor: WidgetStateProperty.all(AppColor.primary),
+                      overlayColor: WidgetStateProperty.all(AppColor.primary),
+                      title: Text(
+                        'Number',
+                        style: AppTextStyle.body3.copyWith(color: AppColor.dark),
+                      ),
+                      value: 'Number',
+                      groupValue: _selectedSortOption,
+                      onChanged: (value) {
+                        if (value != null) {
+                          setState(() {
+                            _selectedSortOption = value;
+                          });
+                          context.read<PokedexBloc>().add(PokedexEvent.fetchPokedex(value));
+                          Navigator.of(context).pop();
+                        }
+                      },
+                    ),
+                    RadioListTile<String>(
+                      fillColor: WidgetStateProperty.all(AppColor.primary),
+                      overlayColor: WidgetStateProperty.all(AppColor.primary),
+                      title: Text(
+                        'Name',
+                        style: AppTextStyle.body3.copyWith(color: AppColor.dark),
+                      ),
+                      value: 'Name',
+                      groupValue: _selectedSortOption,
+                      onChanged: (value) {
+                        if (value != null) {
+                          setState(() {
+                            _selectedSortOption = value;
+                          });
+                          context.read<PokedexBloc>().add(PokedexEvent.fetchPokedex(value));
+                          Navigator.of(context).pop();
+                        }
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+        );
+      },
+      style: IconButton.styleFrom(
+        backgroundColor: AppColor.white,
+        minimumSize: Size(42.0.w, 42.0.w),
+      ),
+      icon: Icon(
+        Icons.tag,
+        color: AppColor.primary,
+        size: 18.0.sp,
       ),
     );
   }
