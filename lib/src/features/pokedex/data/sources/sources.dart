@@ -29,4 +29,26 @@ class PokedexRemoteDataSource {
       throw Exception(e.message);
     }
   }
+
+  Future<PokedexResponseModel> fetchPokemonSearchByName(String name) async {
+    try {
+      final response = await apiClient.get(
+        '${ApiEndpoints.pokemonListEndpoint}/$name',
+      );
+      return PokedexResponseModel.fromJson(response.data);
+    } on DioException catch (e) {
+      throw Exception(e.message);
+    }
+  }
+
+  Future<PokedexResponseModel> fetchPokemonSearchByNumber(int id) async {
+    try {
+      final response = await apiClient.get(
+        '${ApiEndpoints.pokemonListEndpoint}/$id',
+      );
+      return PokedexResponseModel.fromJson(response.data);
+    } on DioException catch (e) {
+      throw Exception(e.message);
+    }
+  }
 }

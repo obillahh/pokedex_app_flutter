@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:pokedex_application/src/features/pokedex/domain/entities/pokedex_response_entity.dart';
 
 import '../sources/sources.dart';
@@ -36,7 +38,7 @@ class PokedexRepositoryImp implements PokedexRepository {
 
       return pokedex.copyWith(results: mutableResults);
     } catch (e) {
-      throw Exception('Failed to fetch pokedex: ${e.toString()}');
+      throw Exception('${inspect(e)}');
     }
   }
 
@@ -54,7 +56,43 @@ class PokedexRepositoryImp implements PokedexRepository {
       );
       return pokedex;
     } catch (e) {
-      throw Exception('Failed to fetch pokedex: ${e.toString()}');
+      throw Exception('${inspect(e)}');
+    }
+  }
+
+  @override
+  Future<PokedexResponseEntity?> getPokemonSearchByName(String name) async {
+    try {
+      final response = await remoteDataSource.fetchPokemonSearchByName(name);
+      final pokedex = PokedexResponseEntity(
+        next: response.next,
+        previous: response.previous,
+        results: response.results
+                ?.map((e) => PokemonDataEntity(name: e.name ?? "", url: e.url ?? ""))
+                .toList() ??
+            [],
+      );
+      return pokedex;
+    } catch (e) {
+      throw Exception('${inspect(e)}');
+    }
+  }
+
+  @override
+  Future<PokedexResponseEntity?> getPokemonSearchByNum(int number) async {
+    try {
+      final response = await remoteDataSource.fetchPokemonSearchByNumber(number);
+      final pokedex = PokedexResponseEntity(
+        next: response.next,
+        previous: response.previous,
+        results: response.results
+                ?.map((e) => PokemonDataEntity(name: e.name ?? "", url: e.url ?? ""))
+                .toList() ??
+            [],
+      );
+      return pokedex;
+    } catch (e) {
+      throw Exception('${inspect(e)}');
     }
   }
 

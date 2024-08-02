@@ -4,6 +4,8 @@ import 'package:pokedex_application/src/features/pokedex/data/implements/impleme
 import 'package:pokedex_application/src/features/pokedex/data/sources/sources.dart';
 import 'package:pokedex_application/src/features/pokedex/domain/usecases/get_pokedex_next_page_usecase.dart';
 import 'package:pokedex_application/src/features/pokedex/domain/usecases/get_pokedex_usecase.dart';
+import 'package:pokedex_application/src/features/pokedex/domain/usecases/get_pokemon_search_by_name.dart';
+import 'package:pokedex_application/src/features/pokedex/domain/usecases/get_pokemon_search_by_number.dart';
 import 'package:pokedex_application/src/features/pokedex/presentation/bloc/pokedex_bloc.dart';
 
 import 'src/core/config/config.dart';
@@ -26,6 +28,20 @@ class PokedexApp extends StatelessWidget {
           ),
         ),
         getPokedexNextPageUseCase: GetPokedexNextPageUseCase(
+          repository: PokedexRepositoryImp(
+            remoteDataSource: PokedexRemoteDataSource(
+              apiClient: ApiClient(),
+            ),
+          ),
+        ),
+        getPokemonSearchByNameUseCase: GetPokemonSearchByNameUseCase(
+          repository: PokedexRepositoryImp(
+            remoteDataSource: PokedexRemoteDataSource(
+              apiClient: ApiClient(),
+            ),
+          ),
+        ),
+        getPokemonSearchByNumberUseCase: GetPokemonSearchByNumberUseCase(
           repository: PokedexRepositoryImp(
             remoteDataSource: PokedexRemoteDataSource(
               apiClient: ApiClient(),

@@ -14,7 +14,8 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-PokedexResponseEntity _$PokedexResponseEntityFromJson(Map<String, dynamic> json) {
+PokedexResponseEntity _$PokedexResponseEntityFromJson(
+    Map<String, dynamic> json) {
   return _PokedexResponseEntity.fromJson(json);
 }
 
@@ -35,8 +36,8 @@ mixin _$PokedexResponseEntity {
 
 /// @nodoc
 abstract class $PokedexResponseEntityCopyWith<$Res> {
-  factory $PokedexResponseEntityCopyWith(
-          PokedexResponseEntity value, $Res Function(PokedexResponseEntity) then) =
+  factory $PokedexResponseEntityCopyWith(PokedexResponseEntity value,
+          $Res Function(PokedexResponseEntity) then) =
       _$PokedexResponseEntityCopyWithImpl<$Res, PokedexResponseEntity>;
   @useResult
   $Res call(
@@ -46,7 +47,8 @@ abstract class $PokedexResponseEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PokedexResponseEntityCopyWithImpl<$Res, $Val extends PokedexResponseEntity>
+class _$PokedexResponseEntityCopyWithImpl<$Res,
+        $Val extends PokedexResponseEntity>
     implements $PokedexResponseEntityCopyWith<$Res> {
   _$PokedexResponseEntityCopyWithImpl(this._value, this._then);
 
@@ -83,7 +85,8 @@ class _$PokedexResponseEntityCopyWithImpl<$Res, $Val extends PokedexResponseEnti
 abstract class _$$PokedexResponseEntityImplCopyWith<$Res>
     implements $PokedexResponseEntityCopyWith<$Res> {
   factory _$$PokedexResponseEntityImplCopyWith(
-          _$PokedexResponseEntityImpl value, $Res Function(_$PokedexResponseEntityImpl) then) =
+          _$PokedexResponseEntityImpl value,
+          $Res Function(_$PokedexResponseEntityImpl) then) =
       __$$PokedexResponseEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -95,10 +98,11 @@ abstract class _$$PokedexResponseEntityImplCopyWith<$Res>
 
 /// @nodoc
 class __$$PokedexResponseEntityImplCopyWithImpl<$Res>
-    extends _$PokedexResponseEntityCopyWithImpl<$Res, _$PokedexResponseEntityImpl>
+    extends _$PokedexResponseEntityCopyWithImpl<$Res,
+        _$PokedexResponseEntityImpl>
     implements _$$PokedexResponseEntityImplCopyWith<$Res> {
-  __$$PokedexResponseEntityImplCopyWithImpl(
-      _$PokedexResponseEntityImpl _value, $Res Function(_$PokedexResponseEntityImpl) _then)
+  __$$PokedexResponseEntityImplCopyWithImpl(_$PokedexResponseEntityImpl _value,
+      $Res Function(_$PokedexResponseEntityImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -169,14 +173,18 @@ class _$PokedexResponseEntityImpl implements _PokedexResponseEntity {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(next),
-      const DeepCollectionEquality().hash(previous), const DeepCollectionEquality().hash(_results));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(next),
+      const DeepCollectionEquality().hash(previous),
+      const DeepCollectionEquality().hash(_results));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$PokedexResponseEntityImplCopyWith<_$PokedexResponseEntityImpl> get copyWith =>
-      __$$PokedexResponseEntityImplCopyWithImpl<_$PokedexResponseEntityImpl>(this, _$identity);
+  _$$PokedexResponseEntityImplCopyWith<_$PokedexResponseEntityImpl>
+      get copyWith => __$$PokedexResponseEntityImplCopyWithImpl<
+          _$PokedexResponseEntityImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -190,7 +198,8 @@ abstract class _PokedexResponseEntity implements PokedexResponseEntity {
   const factory _PokedexResponseEntity(
           {@JsonKey(name: "next") required final dynamic next,
           @JsonKey(name: "previous") required final dynamic previous,
-          @JsonKey(name: "results") required final List<PokemonDataEntity> results}) =
+          @JsonKey(name: "results")
+          required final List<PokemonDataEntity> results}) =
       _$PokedexResponseEntityImpl;
 
   factory _PokedexResponseEntity.fromJson(Map<String, dynamic> json) =
@@ -207,8 +216,8 @@ abstract class _PokedexResponseEntity implements PokedexResponseEntity {
   List<PokemonDataEntity> get results;
   @override
   @JsonKey(ignore: true)
-  _$$PokedexResponseEntityImplCopyWith<_$PokedexResponseEntityImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$PokedexResponseEntityImplCopyWith<_$PokedexResponseEntityImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 PokemonDataEntity _$PokemonDataEntityFromJson(Map<String, dynamic> json) {
@@ -224,7 +233,8 @@ mixin _$PokemonDataEntity {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PokemonDataEntityCopyWith<PokemonDataEntity> get copyWith => throw _privateConstructorUsedError;
+  $PokemonDataEntityCopyWith<PokemonDataEntity> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -233,7 +243,8 @@ abstract class $PokemonDataEntityCopyWith<$Res> {
           PokemonDataEntity value, $Res Function(PokemonDataEntity) then) =
       _$PokemonDataEntityCopyWithImpl<$Res, PokemonDataEntity>;
   @useResult
-  $Res call({@JsonKey(name: "name") String name, @JsonKey(name: "url") String url});
+  $Res call(
+      {@JsonKey(name: "name") String name, @JsonKey(name: "url") String url});
 }
 
 /// @nodoc
@@ -266,21 +277,23 @@ class _$PokemonDataEntityCopyWithImpl<$Res, $Val extends PokemonDataEntity>
 }
 
 /// @nodoc
-abstract class _$$PokemonDataEntityImplCopyWith<$Res> implements $PokemonDataEntityCopyWith<$Res> {
-  factory _$$PokemonDataEntityImplCopyWith(
-          _$PokemonDataEntityImpl value, $Res Function(_$PokemonDataEntityImpl) then) =
+abstract class _$$PokemonDataEntityImplCopyWith<$Res>
+    implements $PokemonDataEntityCopyWith<$Res> {
+  factory _$$PokemonDataEntityImplCopyWith(_$PokemonDataEntityImpl value,
+          $Res Function(_$PokemonDataEntityImpl) then) =
       __$$PokemonDataEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: "name") String name, @JsonKey(name: "url") String url});
+  $Res call(
+      {@JsonKey(name: "name") String name, @JsonKey(name: "url") String url});
 }
 
 /// @nodoc
 class __$$PokemonDataEntityImplCopyWithImpl<$Res>
     extends _$PokemonDataEntityCopyWithImpl<$Res, _$PokemonDataEntityImpl>
     implements _$$PokemonDataEntityImplCopyWith<$Res> {
-  __$$PokemonDataEntityImplCopyWithImpl(
-      _$PokemonDataEntityImpl _value, $Res Function(_$PokemonDataEntityImpl) _then)
+  __$$PokemonDataEntityImplCopyWithImpl(_$PokemonDataEntityImpl _value,
+      $Res Function(_$PokemonDataEntityImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -306,7 +319,8 @@ class __$$PokemonDataEntityImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$PokemonDataEntityImpl implements _PokemonDataEntity {
   const _$PokemonDataEntityImpl(
-      {@JsonKey(name: "name") required this.name, @JsonKey(name: "url") required this.url});
+      {@JsonKey(name: "name") required this.name,
+      @JsonKey(name: "url") required this.url});
 
   factory _$PokemonDataEntityImpl.fromJson(Map<String, dynamic> json) =>
       _$$PokemonDataEntityImplFromJson(json);
@@ -340,7 +354,8 @@ class _$PokemonDataEntityImpl implements _PokemonDataEntity {
   @override
   @pragma('vm:prefer-inline')
   _$$PokemonDataEntityImplCopyWith<_$PokemonDataEntityImpl> get copyWith =>
-      __$$PokemonDataEntityImplCopyWithImpl<_$PokemonDataEntityImpl>(this, _$identity);
+      __$$PokemonDataEntityImplCopyWithImpl<_$PokemonDataEntityImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -352,10 +367,12 @@ class _$PokemonDataEntityImpl implements _PokemonDataEntity {
 
 abstract class _PokemonDataEntity implements PokemonDataEntity {
   const factory _PokemonDataEntity(
-      {@JsonKey(name: "name") required final String name,
-      @JsonKey(name: "url") required final String url}) = _$PokemonDataEntityImpl;
+          {@JsonKey(name: "name") required final String name,
+          @JsonKey(name: "url") required final String url}) =
+      _$PokemonDataEntityImpl;
 
-  factory _PokemonDataEntity.fromJson(Map<String, dynamic> json) = _$PokemonDataEntityImpl.fromJson;
+  factory _PokemonDataEntity.fromJson(Map<String, dynamic> json) =
+      _$PokemonDataEntityImpl.fromJson;
 
   @override
   @JsonKey(name: "name")

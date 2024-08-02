@@ -37,8 +37,8 @@ mixin _$PokedexResponseModel {
 
 /// @nodoc
 abstract class $PokedexResponseModelCopyWith<$Res> {
-  factory $PokedexResponseModelCopyWith(
-          PokedexResponseModel value, $Res Function(PokedexResponseModel) then) =
+  factory $PokedexResponseModelCopyWith(PokedexResponseModel value,
+          $Res Function(PokedexResponseModel) then) =
       _$PokedexResponseModelCopyWithImpl<$Res, PokedexResponseModel>;
   @useResult
   $Res call(
@@ -49,7 +49,8 @@ abstract class $PokedexResponseModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PokedexResponseModelCopyWithImpl<$Res, $Val extends PokedexResponseModel>
+class _$PokedexResponseModelCopyWithImpl<$Res,
+        $Val extends PokedexResponseModel>
     implements $PokedexResponseModelCopyWith<$Res> {
   _$PokedexResponseModelCopyWithImpl(this._value, this._then);
 
@@ -90,8 +91,8 @@ class _$PokedexResponseModelCopyWithImpl<$Res, $Val extends PokedexResponseModel
 /// @nodoc
 abstract class _$$PokedexResponseModelImplCopyWith<$Res>
     implements $PokedexResponseModelCopyWith<$Res> {
-  factory _$$PokedexResponseModelImplCopyWith(
-          _$PokedexResponseModelImpl value, $Res Function(_$PokedexResponseModelImpl) then) =
+  factory _$$PokedexResponseModelImplCopyWith(_$PokedexResponseModelImpl value,
+          $Res Function(_$PokedexResponseModelImpl) then) =
       __$$PokedexResponseModelImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -106,8 +107,8 @@ abstract class _$$PokedexResponseModelImplCopyWith<$Res>
 class __$$PokedexResponseModelImplCopyWithImpl<$Res>
     extends _$PokedexResponseModelCopyWithImpl<$Res, _$PokedexResponseModelImpl>
     implements _$$PokedexResponseModelImplCopyWith<$Res> {
-  __$$PokedexResponseModelImplCopyWithImpl(
-      _$PokedexResponseModelImpl _value, $Res Function(_$PokedexResponseModelImpl) _then)
+  __$$PokedexResponseModelImplCopyWithImpl(_$PokedexResponseModelImpl _value,
+      $Res Function(_$PokedexResponseModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -190,14 +191,20 @@ class _$PokedexResponseModelImpl implements _PokedexResponseModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, count, const DeepCollectionEquality().hash(next),
-      const DeepCollectionEquality().hash(previous), const DeepCollectionEquality().hash(_results));
+  int get hashCode => Object.hash(
+      runtimeType,
+      count,
+      const DeepCollectionEquality().hash(next),
+      const DeepCollectionEquality().hash(previous),
+      const DeepCollectionEquality().hash(_results));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$PokedexResponseModelImplCopyWith<_$PokedexResponseModelImpl> get copyWith =>
-      __$$PokedexResponseModelImplCopyWithImpl<_$PokedexResponseModelImpl>(this, _$identity);
+  _$$PokedexResponseModelImplCopyWith<_$PokedexResponseModelImpl>
+      get copyWith =>
+          __$$PokedexResponseModelImplCopyWithImpl<_$PokedexResponseModelImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -232,8 +239,8 @@ abstract class _PokedexResponseModel implements PokedexResponseModel {
   List<PokemonDataModel>? get results;
   @override
   @JsonKey(ignore: true)
-  _$$PokedexResponseModelImplCopyWith<_$PokedexResponseModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$PokedexResponseModelImplCopyWith<_$PokedexResponseModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 PokemonDataModel _$PokemonDataModelFromJson(Map<String, dynamic> json) {
@@ -249,15 +256,18 @@ mixin _$PokemonDataModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PokemonDataModelCopyWith<PokemonDataModel> get copyWith => throw _privateConstructorUsedError;
+  $PokemonDataModelCopyWith<PokemonDataModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PokemonDataModelCopyWith<$Res> {
-  factory $PokemonDataModelCopyWith(PokemonDataModel value, $Res Function(PokemonDataModel) then) =
+  factory $PokemonDataModelCopyWith(
+          PokemonDataModel value, $Res Function(PokemonDataModel) then) =
       _$PokemonDataModelCopyWithImpl<$Res, PokemonDataModel>;
   @useResult
-  $Res call({@JsonKey(name: "name") String? name, @JsonKey(name: "url") String? url});
+  $Res call(
+      {@JsonKey(name: "name") String? name, @JsonKey(name: "url") String? url});
 }
 
 /// @nodoc
@@ -290,21 +300,23 @@ class _$PokemonDataModelCopyWithImpl<$Res, $Val extends PokemonDataModel>
 }
 
 /// @nodoc
-abstract class _$$PokemonDataModelImplCopyWith<$Res> implements $PokemonDataModelCopyWith<$Res> {
-  factory _$$PokemonDataModelImplCopyWith(
-          _$PokemonDataModelImpl value, $Res Function(_$PokemonDataModelImpl) then) =
+abstract class _$$PokemonDataModelImplCopyWith<$Res>
+    implements $PokemonDataModelCopyWith<$Res> {
+  factory _$$PokemonDataModelImplCopyWith(_$PokemonDataModelImpl value,
+          $Res Function(_$PokemonDataModelImpl) then) =
       __$$PokemonDataModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: "name") String? name, @JsonKey(name: "url") String? url});
+  $Res call(
+      {@JsonKey(name: "name") String? name, @JsonKey(name: "url") String? url});
 }
 
 /// @nodoc
 class __$$PokemonDataModelImplCopyWithImpl<$Res>
     extends _$PokemonDataModelCopyWithImpl<$Res, _$PokemonDataModelImpl>
     implements _$$PokemonDataModelImplCopyWith<$Res> {
-  __$$PokemonDataModelImplCopyWithImpl(
-      _$PokemonDataModelImpl _value, $Res Function(_$PokemonDataModelImpl) _then)
+  __$$PokemonDataModelImplCopyWithImpl(_$PokemonDataModelImpl _value,
+      $Res Function(_$PokemonDataModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -329,7 +341,8 @@ class __$$PokemonDataModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PokemonDataModelImpl implements _PokemonDataModel {
-  const _$PokemonDataModelImpl({@JsonKey(name: "name") this.name, @JsonKey(name: "url") this.url});
+  const _$PokemonDataModelImpl(
+      {@JsonKey(name: "name") this.name, @JsonKey(name: "url") this.url});
 
   factory _$PokemonDataModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$PokemonDataModelImplFromJson(json);
@@ -363,7 +376,8 @@ class _$PokemonDataModelImpl implements _PokemonDataModel {
   @override
   @pragma('vm:prefer-inline')
   _$$PokemonDataModelImplCopyWith<_$PokemonDataModelImpl> get copyWith =>
-      __$$PokemonDataModelImplCopyWithImpl<_$PokemonDataModelImpl>(this, _$identity);
+      __$$PokemonDataModelImplCopyWithImpl<_$PokemonDataModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -378,7 +392,8 @@ abstract class _PokemonDataModel implements PokemonDataModel {
       {@JsonKey(name: "name") final String? name,
       @JsonKey(name: "url") final String? url}) = _$PokemonDataModelImpl;
 
-  factory _PokemonDataModel.fromJson(Map<String, dynamic> json) = _$PokemonDataModelImpl.fromJson;
+  factory _PokemonDataModel.fromJson(Map<String, dynamic> json) =
+      _$PokemonDataModelImpl.fromJson;
 
   @override
   @JsonKey(name: "name")

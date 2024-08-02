@@ -43,7 +43,7 @@ class _PokedexPageState extends State<PokedexPage> {
   AppBar _buildAppBar() {
     return AppBar(
       backgroundColor: AppColor.primary,
-      leadingWidth: 38.h,
+      leadingWidth: 44.w,
       leading: Padding(
         padding: EdgeInsets.only(left: 16.0.w),
         child: SvgPicture.asset(
@@ -64,8 +64,10 @@ class _PokedexPageState extends State<PokedexPage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Expanded(
-                child: PokedexSearchBar(),
+              Expanded(
+                child: PokedexSearchBar(
+                  selectedSortOption: _selectedSortOption,
+                ),
               ),
               SizedBox(width: 16.0.h),
               _buildSortCard(),

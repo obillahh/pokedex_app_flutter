@@ -20,18 +20,24 @@ mixin _$PokedexEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String sortBy) fetchPokedex,
     required TResult Function(String next) fetchPokedexNextPage,
+    required TResult Function(String name) fetchPokemonSearchByName,
+    required TResult Function(int id) fetchPokemonSearchByNumber,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String sortBy)? fetchPokedex,
     TResult? Function(String next)? fetchPokedexNextPage,
+    TResult? Function(String name)? fetchPokemonSearchByName,
+    TResult? Function(int id)? fetchPokemonSearchByNumber,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String sortBy)? fetchPokedex,
     TResult Function(String next)? fetchPokedexNextPage,
+    TResult Function(String name)? fetchPokemonSearchByName,
+    TResult Function(int id)? fetchPokemonSearchByNumber,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -40,18 +46,30 @@ mixin _$PokedexEvent {
     required TResult Function(_GetPokedexEvent value) fetchPokedex,
     required TResult Function(_GetPokedexNextPageEvent value)
         fetchPokedexNextPage,
+    required TResult Function(_GetPokemonSearchByNameEvent value)
+        fetchPokemonSearchByName,
+    required TResult Function(_GetPokemonSearchByNumberEvent value)
+        fetchPokemonSearchByNumber,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetPokedexEvent value)? fetchPokedex,
     TResult? Function(_GetPokedexNextPageEvent value)? fetchPokedexNextPage,
+    TResult? Function(_GetPokemonSearchByNameEvent value)?
+        fetchPokemonSearchByName,
+    TResult? Function(_GetPokemonSearchByNumberEvent value)?
+        fetchPokemonSearchByNumber,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetPokedexEvent value)? fetchPokedex,
     TResult Function(_GetPokedexNextPageEvent value)? fetchPokedexNextPage,
+    TResult Function(_GetPokemonSearchByNameEvent value)?
+        fetchPokemonSearchByName,
+    TResult Function(_GetPokemonSearchByNumberEvent value)?
+        fetchPokemonSearchByNumber,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -142,6 +160,8 @@ class _$GetPokedexEventImpl implements _GetPokedexEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String sortBy) fetchPokedex,
     required TResult Function(String next) fetchPokedexNextPage,
+    required TResult Function(String name) fetchPokemonSearchByName,
+    required TResult Function(int id) fetchPokemonSearchByNumber,
   }) {
     return fetchPokedex(sortBy);
   }
@@ -151,6 +171,8 @@ class _$GetPokedexEventImpl implements _GetPokedexEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String sortBy)? fetchPokedex,
     TResult? Function(String next)? fetchPokedexNextPage,
+    TResult? Function(String name)? fetchPokemonSearchByName,
+    TResult? Function(int id)? fetchPokemonSearchByNumber,
   }) {
     return fetchPokedex?.call(sortBy);
   }
@@ -160,6 +182,8 @@ class _$GetPokedexEventImpl implements _GetPokedexEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String sortBy)? fetchPokedex,
     TResult Function(String next)? fetchPokedexNextPage,
+    TResult Function(String name)? fetchPokemonSearchByName,
+    TResult Function(int id)? fetchPokemonSearchByNumber,
     required TResult orElse(),
   }) {
     if (fetchPokedex != null) {
@@ -174,6 +198,10 @@ class _$GetPokedexEventImpl implements _GetPokedexEvent {
     required TResult Function(_GetPokedexEvent value) fetchPokedex,
     required TResult Function(_GetPokedexNextPageEvent value)
         fetchPokedexNextPage,
+    required TResult Function(_GetPokemonSearchByNameEvent value)
+        fetchPokemonSearchByName,
+    required TResult Function(_GetPokemonSearchByNumberEvent value)
+        fetchPokemonSearchByNumber,
   }) {
     return fetchPokedex(this);
   }
@@ -183,6 +211,10 @@ class _$GetPokedexEventImpl implements _GetPokedexEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetPokedexEvent value)? fetchPokedex,
     TResult? Function(_GetPokedexNextPageEvent value)? fetchPokedexNextPage,
+    TResult? Function(_GetPokemonSearchByNameEvent value)?
+        fetchPokemonSearchByName,
+    TResult? Function(_GetPokemonSearchByNumberEvent value)?
+        fetchPokemonSearchByNumber,
   }) {
     return fetchPokedex?.call(this);
   }
@@ -192,6 +224,10 @@ class _$GetPokedexEventImpl implements _GetPokedexEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetPokedexEvent value)? fetchPokedex,
     TResult Function(_GetPokedexNextPageEvent value)? fetchPokedexNextPage,
+    TResult Function(_GetPokemonSearchByNameEvent value)?
+        fetchPokemonSearchByName,
+    TResult Function(_GetPokemonSearchByNumberEvent value)?
+        fetchPokemonSearchByNumber,
     required TResult orElse(),
   }) {
     if (fetchPokedex != null) {
@@ -279,6 +315,8 @@ class _$GetPokedexNextPageEventImpl implements _GetPokedexNextPageEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String sortBy) fetchPokedex,
     required TResult Function(String next) fetchPokedexNextPage,
+    required TResult Function(String name) fetchPokemonSearchByName,
+    required TResult Function(int id) fetchPokemonSearchByNumber,
   }) {
     return fetchPokedexNextPage(next);
   }
@@ -288,6 +326,8 @@ class _$GetPokedexNextPageEventImpl implements _GetPokedexNextPageEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String sortBy)? fetchPokedex,
     TResult? Function(String next)? fetchPokedexNextPage,
+    TResult? Function(String name)? fetchPokemonSearchByName,
+    TResult? Function(int id)? fetchPokemonSearchByNumber,
   }) {
     return fetchPokedexNextPage?.call(next);
   }
@@ -297,6 +337,8 @@ class _$GetPokedexNextPageEventImpl implements _GetPokedexNextPageEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String sortBy)? fetchPokedex,
     TResult Function(String next)? fetchPokedexNextPage,
+    TResult Function(String name)? fetchPokemonSearchByName,
+    TResult Function(int id)? fetchPokemonSearchByNumber,
     required TResult orElse(),
   }) {
     if (fetchPokedexNextPage != null) {
@@ -311,6 +353,10 @@ class _$GetPokedexNextPageEventImpl implements _GetPokedexNextPageEvent {
     required TResult Function(_GetPokedexEvent value) fetchPokedex,
     required TResult Function(_GetPokedexNextPageEvent value)
         fetchPokedexNextPage,
+    required TResult Function(_GetPokemonSearchByNameEvent value)
+        fetchPokemonSearchByName,
+    required TResult Function(_GetPokemonSearchByNumberEvent value)
+        fetchPokemonSearchByNumber,
   }) {
     return fetchPokedexNextPage(this);
   }
@@ -320,6 +366,10 @@ class _$GetPokedexNextPageEventImpl implements _GetPokedexNextPageEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetPokedexEvent value)? fetchPokedex,
     TResult? Function(_GetPokedexNextPageEvent value)? fetchPokedexNextPage,
+    TResult? Function(_GetPokemonSearchByNameEvent value)?
+        fetchPokemonSearchByName,
+    TResult? Function(_GetPokemonSearchByNumberEvent value)?
+        fetchPokemonSearchByNumber,
   }) {
     return fetchPokedexNextPage?.call(this);
   }
@@ -329,6 +379,10 @@ class _$GetPokedexNextPageEventImpl implements _GetPokedexNextPageEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetPokedexEvent value)? fetchPokedex,
     TResult Function(_GetPokedexNextPageEvent value)? fetchPokedexNextPage,
+    TResult Function(_GetPokemonSearchByNameEvent value)?
+        fetchPokemonSearchByName,
+    TResult Function(_GetPokemonSearchByNumberEvent value)?
+        fetchPokemonSearchByNumber,
     required TResult orElse(),
   }) {
     if (fetchPokedexNextPage != null) {
@@ -345,6 +399,323 @@ abstract class _GetPokedexNextPageEvent implements PokedexEvent {
   String get next;
   @JsonKey(ignore: true)
   _$$GetPokedexNextPageEventImplCopyWith<_$GetPokedexNextPageEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetPokemonSearchByNameEventImplCopyWith<$Res> {
+  factory _$$GetPokemonSearchByNameEventImplCopyWith(
+          _$GetPokemonSearchByNameEventImpl value,
+          $Res Function(_$GetPokemonSearchByNameEventImpl) then) =
+      __$$GetPokemonSearchByNameEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String name});
+}
+
+/// @nodoc
+class __$$GetPokemonSearchByNameEventImplCopyWithImpl<$Res>
+    extends _$PokedexEventCopyWithImpl<$Res, _$GetPokemonSearchByNameEventImpl>
+    implements _$$GetPokemonSearchByNameEventImplCopyWith<$Res> {
+  __$$GetPokemonSearchByNameEventImplCopyWithImpl(
+      _$GetPokemonSearchByNameEventImpl _value,
+      $Res Function(_$GetPokemonSearchByNameEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+  }) {
+    return _then(_$GetPokemonSearchByNameEventImpl(
+      null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetPokemonSearchByNameEventImpl
+    implements _GetPokemonSearchByNameEvent {
+  const _$GetPokemonSearchByNameEventImpl(this.name);
+
+  @override
+  final String name;
+
+  @override
+  String toString() {
+    return 'PokedexEvent.fetchPokemonSearchByName(name: $name)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetPokemonSearchByNameEventImpl &&
+            (identical(other.name, name) || other.name == name));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, name);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetPokemonSearchByNameEventImplCopyWith<_$GetPokemonSearchByNameEventImpl>
+      get copyWith => __$$GetPokemonSearchByNameEventImplCopyWithImpl<
+          _$GetPokemonSearchByNameEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String sortBy) fetchPokedex,
+    required TResult Function(String next) fetchPokedexNextPage,
+    required TResult Function(String name) fetchPokemonSearchByName,
+    required TResult Function(int id) fetchPokemonSearchByNumber,
+  }) {
+    return fetchPokemonSearchByName(name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String sortBy)? fetchPokedex,
+    TResult? Function(String next)? fetchPokedexNextPage,
+    TResult? Function(String name)? fetchPokemonSearchByName,
+    TResult? Function(int id)? fetchPokemonSearchByNumber,
+  }) {
+    return fetchPokemonSearchByName?.call(name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String sortBy)? fetchPokedex,
+    TResult Function(String next)? fetchPokedexNextPage,
+    TResult Function(String name)? fetchPokemonSearchByName,
+    TResult Function(int id)? fetchPokemonSearchByNumber,
+    required TResult orElse(),
+  }) {
+    if (fetchPokemonSearchByName != null) {
+      return fetchPokemonSearchByName(name);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetPokedexEvent value) fetchPokedex,
+    required TResult Function(_GetPokedexNextPageEvent value)
+        fetchPokedexNextPage,
+    required TResult Function(_GetPokemonSearchByNameEvent value)
+        fetchPokemonSearchByName,
+    required TResult Function(_GetPokemonSearchByNumberEvent value)
+        fetchPokemonSearchByNumber,
+  }) {
+    return fetchPokemonSearchByName(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetPokedexEvent value)? fetchPokedex,
+    TResult? Function(_GetPokedexNextPageEvent value)? fetchPokedexNextPage,
+    TResult? Function(_GetPokemonSearchByNameEvent value)?
+        fetchPokemonSearchByName,
+    TResult? Function(_GetPokemonSearchByNumberEvent value)?
+        fetchPokemonSearchByNumber,
+  }) {
+    return fetchPokemonSearchByName?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetPokedexEvent value)? fetchPokedex,
+    TResult Function(_GetPokedexNextPageEvent value)? fetchPokedexNextPage,
+    TResult Function(_GetPokemonSearchByNameEvent value)?
+        fetchPokemonSearchByName,
+    TResult Function(_GetPokemonSearchByNumberEvent value)?
+        fetchPokemonSearchByNumber,
+    required TResult orElse(),
+  }) {
+    if (fetchPokemonSearchByName != null) {
+      return fetchPokemonSearchByName(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetPokemonSearchByNameEvent implements PokedexEvent {
+  const factory _GetPokemonSearchByNameEvent(final String name) =
+      _$GetPokemonSearchByNameEventImpl;
+
+  String get name;
+  @JsonKey(ignore: true)
+  _$$GetPokemonSearchByNameEventImplCopyWith<_$GetPokemonSearchByNameEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetPokemonSearchByNumberEventImplCopyWith<$Res> {
+  factory _$$GetPokemonSearchByNumberEventImplCopyWith(
+          _$GetPokemonSearchByNumberEventImpl value,
+          $Res Function(_$GetPokemonSearchByNumberEventImpl) then) =
+      __$$GetPokemonSearchByNumberEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int id});
+}
+
+/// @nodoc
+class __$$GetPokemonSearchByNumberEventImplCopyWithImpl<$Res>
+    extends _$PokedexEventCopyWithImpl<$Res,
+        _$GetPokemonSearchByNumberEventImpl>
+    implements _$$GetPokemonSearchByNumberEventImplCopyWith<$Res> {
+  __$$GetPokemonSearchByNumberEventImplCopyWithImpl(
+      _$GetPokemonSearchByNumberEventImpl _value,
+      $Res Function(_$GetPokemonSearchByNumberEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$GetPokemonSearchByNumberEventImpl(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetPokemonSearchByNumberEventImpl
+    implements _GetPokemonSearchByNumberEvent {
+  const _$GetPokemonSearchByNumberEventImpl(this.id);
+
+  @override
+  final int id;
+
+  @override
+  String toString() {
+    return 'PokedexEvent.fetchPokemonSearchByNumber(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetPokemonSearchByNumberEventImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetPokemonSearchByNumberEventImplCopyWith<
+          _$GetPokemonSearchByNumberEventImpl>
+      get copyWith => __$$GetPokemonSearchByNumberEventImplCopyWithImpl<
+          _$GetPokemonSearchByNumberEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String sortBy) fetchPokedex,
+    required TResult Function(String next) fetchPokedexNextPage,
+    required TResult Function(String name) fetchPokemonSearchByName,
+    required TResult Function(int id) fetchPokemonSearchByNumber,
+  }) {
+    return fetchPokemonSearchByNumber(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String sortBy)? fetchPokedex,
+    TResult? Function(String next)? fetchPokedexNextPage,
+    TResult? Function(String name)? fetchPokemonSearchByName,
+    TResult? Function(int id)? fetchPokemonSearchByNumber,
+  }) {
+    return fetchPokemonSearchByNumber?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String sortBy)? fetchPokedex,
+    TResult Function(String next)? fetchPokedexNextPage,
+    TResult Function(String name)? fetchPokemonSearchByName,
+    TResult Function(int id)? fetchPokemonSearchByNumber,
+    required TResult orElse(),
+  }) {
+    if (fetchPokemonSearchByNumber != null) {
+      return fetchPokemonSearchByNumber(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetPokedexEvent value) fetchPokedex,
+    required TResult Function(_GetPokedexNextPageEvent value)
+        fetchPokedexNextPage,
+    required TResult Function(_GetPokemonSearchByNameEvent value)
+        fetchPokemonSearchByName,
+    required TResult Function(_GetPokemonSearchByNumberEvent value)
+        fetchPokemonSearchByNumber,
+  }) {
+    return fetchPokemonSearchByNumber(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetPokedexEvent value)? fetchPokedex,
+    TResult? Function(_GetPokedexNextPageEvent value)? fetchPokedexNextPage,
+    TResult? Function(_GetPokemonSearchByNameEvent value)?
+        fetchPokemonSearchByName,
+    TResult? Function(_GetPokemonSearchByNumberEvent value)?
+        fetchPokemonSearchByNumber,
+  }) {
+    return fetchPokemonSearchByNumber?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetPokedexEvent value)? fetchPokedex,
+    TResult Function(_GetPokedexNextPageEvent value)? fetchPokedexNextPage,
+    TResult Function(_GetPokemonSearchByNameEvent value)?
+        fetchPokemonSearchByName,
+    TResult Function(_GetPokemonSearchByNumberEvent value)?
+        fetchPokemonSearchByNumber,
+    required TResult orElse(),
+  }) {
+    if (fetchPokemonSearchByNumber != null) {
+      return fetchPokemonSearchByNumber(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetPokemonSearchByNumberEvent implements PokedexEvent {
+  const factory _GetPokemonSearchByNumberEvent(final int id) =
+      _$GetPokemonSearchByNumberEventImpl;
+
+  int get id;
+  @JsonKey(ignore: true)
+  _$$GetPokemonSearchByNumberEventImplCopyWith<
+          _$GetPokemonSearchByNumberEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
